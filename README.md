@@ -20,8 +20,8 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 - Power Supplies: Dedicated sources ensure stable operation for both the lock and the board/sensors.
 
 ## Circuit Diagram
-- View the circuit diagram in the "Circuit.jpeg" file located in the repository for detailed wiring and setup instructions.
-- ![Circuit Diagram](.Images/Circuit.jpeg)
+- View the circuit diagram in the "Circuit.jpeg" file located in the Images Directory for detailed wiring and setup instructions.
+- ![Circuit Diagram](Images/Circuit.jpeg)
 
 ## Project Team
 - 2021/E/006 Jenarththan A.
