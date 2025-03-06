@@ -21,7 +21,7 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 
 ## Circuit Diagram
 - View the circuit diagram in the "Circuit.jpeg" file located in the Images Directory.
-  ![Circuit Diagram](Images/Circuit.jpeg)
+  ![Circuit Diagram](Images/image.png)
 
 ## Project Team
 - 2021/E/006 Jenarththan A.
