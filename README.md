@@ -1,4 +1,6 @@
-# Biometric Door Locking and Attendance System
+# BIO GUARD ATTENDANCE
+
+## Biometric Door Locking and Attendance System
 
 ## Overview
 This system integrates a fingerprint scanner, solenoid lock, and web application with the ESP32 microcontroller to enhance security and manage attendance efficiently. Key functionalities include:
@@ -14,7 +16,7 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 
 ## Hardware Components
 - ESP32 Development Board: Central processing unit with extensive Wi-Fi and Bluetooth capabilities, perfect for IoT solutions.
-- R307 Fingerprint Sensor: Offers fast and accurate scanning, ideal for high-security setups.
+- AS608 Fingerprint Sensor: Offers fast and accurate scanning, ideal for high-security setups.
 - Solenoid Lock: Provides physical access control by locking or unlocking doors based on authentication.
 - OLED Display: Displays system statuses and instructions directly at the point of access.
 - Power Supplies: Dedicated sources ensure stable operation for both the lock and the board/sensors.
