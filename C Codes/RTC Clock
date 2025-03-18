@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include "driver/i2c.h"
+#include "esp_log.h"
+
+// Define I2C configuration
+#define I2C_MASTER_SCL_IO  22       // GPIO for SCL
+#define I2C_MASTER_SDA_IO  21       // GPIO for SDA
+#define I2C_MASTER_FREQ_HZ 100000   // I2C frequency (100kHz)
+#define I2C_MASTER_NUM     I2C_NUM_0 // I2C port number
+#define DS3231_ADDR        0x68      // DS3231 I2C address
+
+static const char *TAG = "RTC_DS3231";
+
+// Convert Binary Coded Decimal (BCD) to Decimal
+uint8_t bcd_to_decimal(uint8_t val) {
+    return (val / 16) * 10 + (val % 16);
+}
+
+// Convert Decimal to BCD
+uint8_t decimal_to_bcd(uint8_t val) {
+    return ((val / 10) << 4) | (val % 10);
+}
+
+// Function to initialize I2C
+void i2c_master_init() {
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = I2C_MASTER_SDA_IO,
+        .scl_io_num = I2C_MASTER_SCL_IO,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = I2C_MASTER_FREQ_HZ
+    };
+    i2c_param_config(I2C_MASTER_NUM, &conf);
+    i2c_driver_install(I2C_MASTER_NUM, conf.mode, 0, 0, 0);
+    ESP_LOGI(TAG, "I2C initialized.");
+}
+
+// Function to set time on DS3231 RTC
+void set_rtc_time(uint8_t hours, uint8_t minutes, uint8_t seconds) {
+    uint8_t data[4];
+    data[0] = 0x00;  // Start writing from register 0 (seconds)
+    data[1] = decimal_to_bcd(seconds);
+    data[2] = decimal_to_bcd(minutes);
+    data[3] = decimal_to_bcd(hours);
+
+    esp_err_t err = i2c_master_write_to_device(I2C_MASTER_NUM, DS3231_ADDR, data, 4, 1000 / portTICK_PERIOD_MS);
+    if (err == ESP_OK) {
+        ESP_LOGI(TAG, "RTC Time Set: %02d:%02d:%02d", hours, minutes, seconds);
+    } else {
+        ESP_LOGE(TAG, "Failed to set RTC time.");
+    }
+}
+
+// Function to read time from DS3231 RTC
+void read_rtc_time() {
+    uint8_t reg = 0x00;  // Register to read from
+    uint8_t data[7];     // Buffer to store time data
+
+    // Send register address
+    i2c_master_write_to_device(I2C_MASTER_NUM, DS3231_ADDR, &reg, 1, 1000 / portTICK_PERIOD_MS);
+
+    // Read 7 bytes (seconds, minutes, hours, day, date, month, year)
+    i2c_master_read_from_device(I2C_MASTER_NUM, DS3231_ADDR, data, 7, 1000 / portTICK_PERIOD_MS);
+
+    // Convert BCD to decimal
+    uint8_t seconds = bcd_to_decimal(data[0]);
+    uint8_t minutes = bcd_to_decimal(data[1]);
+    uint8_t hours = bcd_to_decimal(data[2] & 0x3F); // Mask 24-hour format
+
+    ESP_LOGI(TAG, "Current RTC Time: %02d:%02d:%02d", hours, minutes, seconds);
+}
+
+// Main application
+void app_main() {
+    // Initialize I2C
+    i2c_master_init();
+
+    // Set RTC time to 14:30:00 (2:30 PM)
+    set_rtc_time(14, 30, 0);
+
+    // Continuously read and display RTC time
+    while (1) {
+        read_rtc_time();
+        vTaskDelay(1000 / portTICK_PERIOD_MS);  // Delay for 1 second
+    }
+}
