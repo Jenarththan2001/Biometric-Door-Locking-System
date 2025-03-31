@@ -25,13 +25,13 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 - View the circuit diagram in the "Circuit.jpeg" file located in the Images Directory.
   ![Circuit Diagram](Images/image.png)
 
-##  Architecture Diagram
+## Architecture Diagram
 
 ### High-Level Architecture Diagram
 
-![Architecture Diagram](Images/Architecture.png)
+![Architecture Diagram](Images/Architecture.svg)
 
-> High-level architecture diagram of the BIO GUARD Attendance System. The ESP32-based door unit (left, gray box) interfaces with all hardware components (fingerprint sensor, keypad, OLED display, RTC, relay, LEDs). The ESP32 connects via Wi-Fi to the Firebase cloud (center), which stores log data and user info. An admin user (right) can access this data through a web application in real time. 
+> High-level architecture diagram of the BIO GUARD Attendance System. The ESP32-based door unit (left, gray box) interfaces with all hardware components (fingerprint sensor, keypad, OLED display, RTC, relay, LEDs). The ESP32 connects via Wi-Fi to the Firebase cloud (center), which stores log data and user info. An admin user (right) can access this data through a web application in real time. In addition, the admin can directly operate the door unit via the keypad to enroll, delete fingerprints, or exit admin mode.
 
 - **Communication Protocols**:
     - UART for fingerprint sensor.
@@ -42,13 +42,16 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 - **System Description**:
     - The ESP32 microcontroller is the heart of the door unit, managing peripheral devices and network connectivity.
     - The R307 fingerprint sensor connects to the ESP32 via UART for secure biometric data exchange.
-    - The 4x4 matrix keypad is connected via GPIOs (configured as a matrix) for PIN entry and system interaction.
+    - The 4x4 matrix keypad is connected via GPIOs (configured as a matrix) for PIN entry, admin access, and system interaction.
     - Both the OLED display and DS1307 RTC are on the shared I2C bus.
     - The ESP32 drives the relay to control the solenoid lock and also manages status LEDs through GPIO.
     - The ESP32 connects to Firebase Cloud over Wi-Fi using HTTPS REST API or MQTT for data synchronization.
     - Firebase handles real-time logging and user data management.
-    - The Admin interacts via a Web Application using a browser, enabling remote monitoring, access control, and system management.
+    - The Admin interacts with the system:
+        - **Remotely** via the web application for monitoring and managing users.
+        - **Directly** via the keypad to perform enrollment, deletion, or administrative operations.
     - Users/Employees interact only with the door unit through the fingerprint sensor and keypad.
+
 
 > **Separation of Concerns**: 
 > - The door unit handles real-time access control and user interaction.
