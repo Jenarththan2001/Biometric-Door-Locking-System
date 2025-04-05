@@ -1,0 +1,71 @@
+[1/5] cmd.exe /C "cd /D C:\Users\jenai\workspace\Fingerprint_System\build\esp-idf\esptool_py && F:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe F:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/jenai/workspace/Fingerprint_System/build/partition_table/partition-table.bin C:/Users/jenai/workspace/Fingerprint_System/build/OLED_Test.bin"
+OLED_Test.bin binary size 0xcc800 bytes. Smallest app partition is 0x100000 bytes. 0x33800 bytes (20%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\jenai\workspace\Fingerprint_System\build\bootloader\esp-idf\esptool_py && F:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe F:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Users/jenai/workspace/Fingerprint_System/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.
+[2/3] cmd.exe /C "cd /D F:\Espressif\frameworks\esp-idf-v5.3.1\components\esptool_py && F:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=F:/Espressif/frameworks/esp-idf-v5.3.1 -D SERIAL_TOOL=F:/Espressif/python_env/idf5.3_py3.11_env/Scripts/python.exe;;F:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/jenai/workspace/Fingerprint_System/build -P F:/Espressif/framesptool.py --chip esp32 -p COM6 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 OLED_Test.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM6
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 94:54:c5:b1:83:54
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000dcfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26752 bytes to 16359...
+Writing at 0x00001000... (100 %)
+Wrote 26752 bytes (16359 compressed) at 0x00001000 in 0.7 seconds (effective 326.8 kbit/s)...
+Hash of data verified.
+Compressed 837632 bytes to 529820...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d2a2... (6 %)
+Writing at 0x000256a2... (9 %)
+Writing at 0x0002a3d3... (12 %)
+Writing at 0x00034b39... (15 %)
+Writing at 0x0003b3b8... (18 %)
+Writing at 0x00040dc5... (21 %)
+Writing at 0x0004678e... (24 %)
+Writing at 0x0004ca17... (27 %)
+Writing at 0x00052856... (30 %)
+Writing at 0x0005823e... (33 %)
+Writing at 0x0005dd7d... (36 %)
+Writing at 0x0006392d... (39 %)
+Writing at 0x000695c1... (42 %)
+Writing at 0x0006f488... (45 %)
+Writing at 0x00074e97... (48 %)
+Writing at 0x0007b050... (51 %)
+Writing at 0x00080302... (54 %)
+Writing at 0x000859b9... (57 %)
+Writing at 0x0008ab8a... (60 %)
+Writing at 0x00090292... (63 %)
+Writing at 0x00095991... (66 %)
+Writing at 0x0009b2c6... (69 %)
+Writing at 0x000a0d30... (72 %)
+Writing at 0x000a67fd... (75 %)
+Writing at 0x000ac549... (78 %)
+Writing at 0x000b1f83... (81 %)
+Writing at 0x000b7a5a... (84 %)
+Writing at 0x000c19ee... (87 %)
+Writing at 0x000c9327... (90 %)
+Writing at 0x000cf23e... (93 %)
+Writing at 0x000d5532... (96 %)
+Writing at 0x000da76a... (100 %)
+Wrote 837632 bytes (529820 compressed) at 0x00010000 in 12.4 seconds (effective 538.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 643.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+eworks/esp-idf-v5.3.1/components/esptool_py/run_serial_tool.cmake"
