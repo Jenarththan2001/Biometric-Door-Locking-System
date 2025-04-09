@@ -16,7 +16,7 @@ extern "C" {
 
 void ds1307_init(void);
 bool ds1307_get_time(uint8_t* hour, uint8_t* min, uint8_t* sec);
-bool ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec);  // ✅ Correct return type
+bool ds1307_set_time(uint8_t hour, uint8_t min, uint8_t sec);  
 
 #ifdef __cplusplus
 }
