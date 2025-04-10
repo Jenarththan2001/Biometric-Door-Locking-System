@@ -24,7 +24,7 @@ const LogTable = () => {
     onChildAdded(logsRef, (snapshot) => {
       const rawLog = snapshot.val();
       const formattedLog = {
-        userId: `EMP${rawLog.UserID}`,
+        userId: rawLog.AccessGranted === 0 ? 'UnAuthorized Access' : `EMP${rawLog.UserID}`,
         status: rawLog.AccessGranted === 1 ? 'granted' : 'rejected',
         timestamp: `${rawLog.Timestamp}`
       };
