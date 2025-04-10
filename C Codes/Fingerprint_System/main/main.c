@@ -40,8 +40,6 @@ static EventGroupHandle_t event_group;
 
 
 
-
-
 // Buzzer PWM Setup
 void init_buzzer_pwm() {
     ledc_timer_config_t buzzer_timer = {
