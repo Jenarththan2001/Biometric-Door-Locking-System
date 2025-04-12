@@ -1,3 +1,4 @@
+
 # BIO GUARD ATTENDANCE
 
 ## Biometric Door Locking and Attendance System
@@ -67,3 +68,4 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 ## Usage
 - Admins: Log into the web application for user management, log viewing, and settings adjustments.
 - Users: Register fingerprints through the admin panel, then access controlled doors by verifying fingerprints at the scanner.
+

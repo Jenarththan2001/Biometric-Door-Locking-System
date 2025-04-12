@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* navbar top */
+.navbar-top{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+.social-link i img{
+    margin-left: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-link i img:hover{
+    background-color: rgba(238,224,208);
+    border-radius: 50px;
+}
+@media screen and (max-width:420px){
+    .social-link i img{
+        width: 20px;
+    }
+}
+.logo h3{
+    font-weight: bold;
+}
+@media screen and (max-width:420px){
+    .logo h3{
+        font-size: 20px;
+    }
+}
+.icons i img{
+    margin-left: 10px;
+    cursor: pointer;
+}
+@media screen and (max-width:420px){
+    .icons i img{
+        width: 20px;
+    }
+}
+/* navbar top */
+
+/* main content */
+.main-content{
+    width: 100%;
+    height: 90vh;
+    background-image: url(./image/door.jpg);
+    background-size: cover;
+    background-position: 70%;
+}
+
+/* heading in the img-background */
+.heading {
+    font-size: 36px;               /* Font size */
+    font-family: Arial, sans-serif; /* Font type */
+    color: #7a2525be;               /* Text color */
+    font-weight: bold;              /* Make the text bold */
+    text-align: left;               /* Text alignment */
+    padding: 20px;                  /* Padding around text */
+    /* background-color: #16b813;      Background color with shading */
+    border-radius: 10px;            /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for a subtle shading effect */
+    width: fit-content;             /* Adjust width to fit content */
+    margin: auto;                   /* Center horizontally */
+    margin-bottom: 20px; 
+}
+
+.biometric-text {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    color: #0035f5e7;                /* Text color */
+    font-size: 24px;                 /* Text size */
+    font-weight: bold;               /* Bold text */
+    padding: 20px;                   /* Padding inside the box */
+    background-color: rgb(227, 217, 217);         /* Black box background */
+    border-radius: 5px;              /* Rounded corners for the box */
+    animation: blink-animation 3.5s infinite alternate; /* Blinking effect */
+}
+
+/* Animation for blinking effect */
+@keyframes blink-animation {
+    0% {
+        color: #e465d3e7;             /* Initial text color */
+    }
+    50% {
+        color: #f107da;               /* Color change at the middle of the animation */
+    }
+    100% {
+        color: #e564cefb;             /* Back to initial text color */
+    }
+}
+
+
+
+/* navbar */
+#navbar-color{
+    background-color: rgba(238,224,208);
+}
+.navbar-nav{
+    margin: auto;
+}
+.nav-link{
+    margin-left: 30px;
+    font-weight: bold;
+    color: black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.nav-link:hover{
+    color: green;
+}
+/* navbar */
+
+/* content */
+.content{
+    margin-top: 150px;
+    margin-left: 60px;
+}
+.content h1{
+    font-size: 50px;
+}
+#btn1 button{
+    width: 150px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid black;
+    letter-spacing: 3px;
+    font-weight: bold;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn1 button:hover{
+    background-color: green;
+}
+@media screen and (max-width:420px){
+    .content h1{
+        font-size: 30px;
+    }
+}
+/* content */
+
+/* main content */
+
+/* card1 */
+#btn2 button{
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn2 button:hover{
+    background-color: rgba(238,224,208);
+}
+/* card1 */
+
+/* card2 */
+#tpc{
+    box-shadow: 0 0 5px black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#tpc:hover{
+    transform: translateY(-10px);
+}
+/* card2 */
+
+/* card3 */
+#c p{
+    font-weight: bold;
+}
+#btn3{
+    text-align: center;
+}
+#btn3 button{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn3 button:hover{
+    background-color: rgba(238,224,208);
+}
+@media screen and (max-width:895px){
+    #btn3 button{
+        width: 100px;
+    }
+}
+/* card3 */
+#btn4 button{
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#btn4 button:hover{
+    background-color: rgba(238,224,208);
+}
+/* footer */
+#footer{
+    width: 100%;
+    background-color: black;
+    margin-top: 100px;
+}
+#footer h1{
+    color: white;
+    padding-top: 30px;
+}
+#footer p{
+    color: white;
+}
+.icons i{
+    color: rgba(238,224,208);
+    font-size: 30px;
+    cursor: pointer;
+}
+.copyright{
+    color: white;
+    margin-top: 20px;
+}
+.credite{
+    color: white;
+}
+
+
+/* footer */
