@@ -21,7 +21,8 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 
 | Front View | Side View | Angle View |
 |------------|-----------|------------|
-| ![](Images/img1.jpg) | ![](Images/img2.jpg) | ![](Images/img3.jpg) |
+| ![](Images/img1.JPG) | ![](Images/img2.JPG) | ![](Images/img3.JPG) |
+
 
 ## Hardware Components
 - ESP32 Development Board: Central processing unit with extensive Wi-Fi and Bluetooth capabilities, perfect for IoT solutions.
