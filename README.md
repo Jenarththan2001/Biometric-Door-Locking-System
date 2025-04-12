@@ -3,7 +3,7 @@
 
 ## Biometric Door Locking and Attendance System
 
-![Logo](Images/logo.jpg)
+![Logo](Images/logo.png)
 
 ## Overview
 This system integrates a fingerprint scanner, solenoid lock, and web application with the ESP32 microcontroller to enhance security and manage attendance efficiently. Key functionalities include:
