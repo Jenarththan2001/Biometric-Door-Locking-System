@@ -23,6 +23,14 @@ This system integrates a fingerprint scanner, solenoid lock, and web application
 |------------|-----------|------------|
 | ![](Images/img1.JPG) | ![](Images/img2.JPG) | ![](Images/img3.JPG) |
 
+## Web Application UI
+
+| Admin Login Page | Access Log Dashboard |
+|------------------|----------------------|
+| ![](Images/UI1.jpeg) | ![](Images/UI2.jpeg) |
+
+> The web interface allows administrators to log in securely, view logs of authorized/unauthorized access attempts, and manage users efficiently through a responsive UI.
+
 
 ## Hardware Components
 - ESP32 Development Board: Central processing unit with extensive Wi-Fi and Bluetooth capabilities, perfect for IoT solutions.
